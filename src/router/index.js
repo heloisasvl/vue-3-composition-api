@@ -6,8 +6,14 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'event-list',
       component: EventListView
+    },
+    {
+      path: '/event/:id',
+      name: 'event-details',
+      props: true,
+      component: () => import('../views/EventDetailsView.vue')
     },
     {
       path: '/about',
